@@ -2,11 +2,11 @@
 
 ---
 
-- [Home](/content/index)
-- [What we do](/content/index#we-help-you-to-transform-your-digital-applications-for-customerdelight)
-- [Expertise](/content/index#team-expertise)
-- [Technologies](/content/index#hands-ontechnologies)
+- [Home](/)
+- [What we do](/#we-help-you-to-transform-your-digital-applications-for-customerdelight)
+- [Expertise](/#team-expertise)
+- [Technologies](/#hands-ontechnologies)
 
 ---
 
-- [Connect with us](/content/index#connectwith-us)
+- [Connect with us](/#connectwith-us)
