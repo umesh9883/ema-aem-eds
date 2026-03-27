@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-logos",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-27T18:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://cloudhalotech.com/",
+    "originPage": "homepage platforms and technologies sections",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "logo-showcase",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "logo images in scrolling row",
+    "buttonCount": 0,
+    "imageCount": 15
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "partner logo showcases",
+      "technology stack displays",
+      "client logo carousels"
+    ],
+    "notSuitableFor": [
+      "hero banners",
+      "content-heavy slides",
+      "image galleries with captions"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-27T18:20:00.000Z"
+  }
+}

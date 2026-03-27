@@ -1,0 +1,37 @@
+/* columns-contact: "Connect With Us" two-column layout */
+.columns-contact > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-contact > div > div {
+  order: 1;
+}
+
+.columns-contact > div > .columns-contact-img-col {
+  order: 0;
+}
+
+/* 3D Cloud image: constrain to ~400px */
+.columns-contact img {
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+
+.columns-contact > div > .columns-contact-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-contact > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 32px;
+  }
+
+  .columns-contact > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

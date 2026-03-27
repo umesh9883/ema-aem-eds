@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-services",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-27T18:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://cloudhalotech.com/",
+    "originPage": "homepage what-we-do section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "services-overview",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "heading + image | grouped icon+text items",
+    "buttonCount": 0,
+    "imageCount": 7
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "service overview sections with left heading and right content",
+      "two-column layouts with structured content",
+      "what-we-do or about-us sections"
+    ],
+    "notSuitableFor": [
+      "simple text-and-image columns",
+      "comparison layouts",
+      "contact information layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-27T18:20:00.000Z"
+  }
+}

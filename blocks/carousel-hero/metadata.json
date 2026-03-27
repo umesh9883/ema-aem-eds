@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-27T18:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://cloudhalotech.com/",
+    "originPage": "homepage hero section",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero-carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + heading + subtitle + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections with rotating slides",
+      "landing pages with background image carousels",
+      "full-viewport hero banners"
+    ],
+    "notSuitableFor": [
+      "logo carousels",
+      "testimonial sliders",
+      "image-only galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-27T18:20:00.000Z"
+  }
+}

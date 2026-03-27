@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-expertise",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-27T18:20:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://cloudhalotech.com/",
+    "originPage": "homepage expertise section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "expertise-grid",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + title + description",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "team expertise or capability grids",
+      "service offering cards with icons",
+      "feature grids with icon + title + description"
+    ],
+    "notSuitableFor": [
+      "product cards with large images",
+      "blog article cards",
+      "testimonial cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-27T18:20:00.000Z"
+  }
+}

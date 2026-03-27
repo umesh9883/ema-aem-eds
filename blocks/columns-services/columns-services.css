@@ -1,0 +1,58 @@
+/* columns-services: "What we do" two-column layout */
+.columns-services > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left column: heading text + main "whatwedo" icon */
+.columns-services > div > div:first-child {
+  order: 1;
+}
+
+/* Right column: service sub-headings + icon rows */
+.columns-services > div > div:nth-child(2) {
+  order: 0;
+}
+
+/* Main "whatwedo" illustration - constrain to ~210px */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-services > div > div:first-child img,
+.columns-services > div > .columns-services-img-col img {
+  display: block;
+  max-width: 210px;
+  height: auto;
+  margin: 24px 0;
+}
+
+/* Service icons in the right column ~62px */
+.columns-services > div > div:nth-child(2) img {
+  display: block;
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  margin: 8px 0;
+}
+
+.columns-services > div > .columns-services-img-col {
+  order: 0;
+}
+
+@media (width >= 900px) {
+  .columns-services > div {
+    align-items: flex-start;
+    flex-direction: unset;
+    gap: 32px;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .columns-services > div > div:first-child {
+    flex: 1;
+    order: unset;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .columns-services > div > div:nth-child(2) {
+    flex: 2;
+    order: unset;
+  }
+}

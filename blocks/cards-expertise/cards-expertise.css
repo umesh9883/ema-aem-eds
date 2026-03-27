@@ -1,0 +1,49 @@
+/* cards-expertise: Team Expertise card grid */
+.cards-expertise > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cards-expertise > ul > li {
+  background-color: rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.cards-expertise .cards-expertise-card-body {
+  margin: 12px 0 0;
+}
+
+.cards-expertise .cards-expertise-card-image {
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Expertise card icons: ~100px centered */
+.cards-expertise > ul > li img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  aspect-ratio: auto;
+}
+
+/* Header area: expertise icon constrained */
+.cards-expertise .default-content-wrapper img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (width >= 900px) {
+  .cards-expertise > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
