@@ -136,6 +136,22 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Dark Navy",
+            "value": "dark-navy"
+          },
+          {
+            "name": "Gradient Blue",
+            "value": "gradient-blue"
+          },
+          {
+            "name": "Dark Blue",
+            "value": "dark-blue"
+          },
+          {
+            "name": "Light Grey",
+            "value": "light-grey"
           }
         ]
       }
@@ -150,25 +166,6 @@
         "name": "summary",
         "value": "",
         "label": "Summary"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
       },
       {
         "component": "richtext",

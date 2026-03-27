@@ -160,21 +160,6 @@
           }
         },
         {
-          "title": "Card",
-          "id": "card",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Card",
-                  "model": "card"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Carousel Hero",
           "id": "carousel-hero",
           "plugins": {

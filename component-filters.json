@@ -11,8 +11,13 @@
       "accordion",
       "button",
       "cards",
+      "cards-expertise",
       "carousel",
+      "carousel-hero",
+      "carousel-logos",
       "columns",
+      "columns-contact",
+      "columns-services",
       "embed",
       "fragment",
       "form",
@@ -70,27 +75,9 @@
     ]
   },
   {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
     "id": "columns-services",
     "components": [
       "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
     ]
   },
   {
