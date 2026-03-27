@@ -1,7 +1,7 @@
 {
   "mappings": [
-    "/content/aem-block-collection/:/",
-    "/content/aem-block-collection/metadata:/metadata.json",
-    "/content/aem-block-collection/configuration:/.helix/config.json"
+    "/content/cloudhalo/:/",
+    "/content/cloudhalo/metadata:/metadata.json",
+    "/content/cloudhalo/configuration:/.helix/config.json"
   ]
 }
