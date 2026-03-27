@@ -270,6 +270,32 @@ main .section.highlight {
   padding: 40px 0;
 }
 
+/* dark-navy: flat dark blue background for "What we do" section */
+main .section.dark-navy {
+  background-color: var(--dark-color);
+  color: #fff;
+  margin: 0;
+  padding: 64px 0;
+}
+
+main .section.dark-navy h1,
+main .section.dark-navy h2,
+main .section.dark-navy h3 {
+  color: #fff;
+}
+
+main .section.dark-navy h2 {
+  color: var(--accent-color);
+}
+
+main .section.dark-navy p {
+  color: rgb(255 255 255 / 85%);
+}
+
+main .section.dark-navy a:any-link {
+  color: #fff;
+}
+
 /* gradient-blue: expertise section with gradient background image */
 main .section.gradient-blue {
   background: var(--dark-color) url('https://cloudhalotech.com/images/background-gradient.jpg') no-repeat center / cover;

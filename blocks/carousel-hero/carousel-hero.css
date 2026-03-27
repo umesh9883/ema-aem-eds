@@ -4,6 +4,7 @@
 main > .section:has(.carousel-hero) {
   margin: 0;
   padding: 0;
+  background-color: var(--dark-color);
 }
 
 main > .section:has(.carousel-hero) > div {
