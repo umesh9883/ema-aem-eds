@@ -71,13 +71,19 @@
   {
     "id": "columns-contact",
     "components": [
-      "column"
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
     "id": "columns-services",
     "components": [
-      "column"
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {

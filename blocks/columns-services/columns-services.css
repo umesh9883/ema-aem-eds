@@ -40,6 +40,7 @@
 }
 
 /* Right-column images: invert to white so dark icons show on dark background */
+
 /* This structural fallback ensures icons display even if JS decoration fails */
 /* stylelint-disable-next-line no-descending-specificity */
 .columns-services > div > div:nth-child(2) img {

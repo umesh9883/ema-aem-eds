@@ -19,6 +19,90 @@
   display: block;
 }
 
+/* --- columns-services variant (dark-navy "What We Do" section) --- */
+
+/* Right column: service icon grid */
+.columns.columns-services > div > div:nth-child(2) {
+  order: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  gap: 0 16px;
+  text-align: center;
+}
+
+/* Left column illustration */
+.columns.columns-services > div > div:first-child {
+  order: 1;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns.columns-services > div > div:first-child img {
+  max-width: 210px;
+  height: auto;
+  margin: 24px 0;
+}
+
+/* Section sub-headings span full width */
+.columns.columns-services .services-heading {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+
+/* Icon paragraphs - circular blue background */
+.columns.columns-services .services-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgb(0 64 255 / 25%);
+  margin: 12px auto 4px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Service icons - white on dark background */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns.columns-services > div > div:nth-child(2) img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 0;
+  filter: brightness(0) invert(1);
+}
+
+/* AEM picture wrapper */
+.columns.columns-services > div > div:nth-child(2) picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text labels below icons */
+.columns.columns-services .services-label {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+/* Grid column placement via data-col */
+.columns.columns-services [data-col="1"] {
+  grid-column: 1;
+}
+
+.columns.columns-services [data-col="2"] {
+  grid-column: 2;
+}
+
+.columns.columns-services [data-col="3"] {
+  grid-column: 3;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
@@ -28,6 +112,24 @@
 
   .columns > div > div {
     flex: 1;
+    order: unset;
+  }
+
+  /* columns-services desktop layout */
+  .columns.columns-services > div {
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .columns.columns-services > div > div:first-child {
+    flex: 0 0 calc(33.33% - 15px);
+    order: unset;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .columns.columns-services > div > div:nth-child(2) {
+    flex: 0 0 calc(66.67% - 15px);
     order: unset;
   }
 }
