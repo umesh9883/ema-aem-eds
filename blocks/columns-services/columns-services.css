@@ -35,7 +35,7 @@
 .columns-services > div > div:nth-child(2) h2,
 .columns-services .services-heading {
   grid-column: 1 / -1;
-  text-align: left;
+  text-align: center;
   font-size: 32px;
   font-weight: 600;
   margin: 16px 0 8px;
