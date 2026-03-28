@@ -70,6 +70,14 @@
   justify-content: center;
 }
 
+/* Background image on right column (JS-enhanced) */
+.columns-services .services-bg-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Icon paragraphs - circular blue background (JS class) */
 .columns-services .services-icon {
   display: flex;

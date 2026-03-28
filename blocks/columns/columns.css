@@ -91,6 +91,14 @@
   margin: 0 0 16px;
 }
 
+/* Background image on right column (JS-enhanced) */
+.dark-navy .columns .services-bg-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* --- JS-enhanced styles (applied after columns.js adds classes) --- */
 
 /* Icon paragraphs - circular blue background */
