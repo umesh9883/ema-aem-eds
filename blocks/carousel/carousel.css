@@ -135,6 +135,11 @@
   left: calc(50% - 2px);
 }
 
+/* Universal Editor: fixed height to prevent infinite iframe resize loop */
+html.adobe-ue-preview .carousel .carousel-slide {
+  min-height: 400px;
+}
+
 @media (width >= 600px) {
   .carousel .carousel-navigation-buttons {
     left: 24px;

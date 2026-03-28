@@ -30,6 +30,11 @@ header nav[aria-expanded='true'] {
   min-height: 100vh;
 }
 
+/* Universal Editor: fixed height to prevent infinite iframe resize loop */
+html.adobe-ue-preview header nav[aria-expanded='true'] {
+  min-height: auto;
+}
+
 @media (width >= 900px) {
   header nav {
     display: flex;

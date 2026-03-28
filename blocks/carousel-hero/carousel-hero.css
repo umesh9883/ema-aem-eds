@@ -205,6 +205,11 @@ main > .section:has(.carousel-hero) > div {
   left: calc(50% - 2px);
 }
 
+/* Universal Editor: fixed height to prevent infinite iframe resize loop */
+html.adobe-ue-preview .carousel-hero .carousel-hero-slide {
+  min-height: 600px;
+}
+
 /* Desktop responsive */
 @media (width >= 900px) {
   .carousel-hero .carousel-hero-slide .carousel-hero-slide-content {
