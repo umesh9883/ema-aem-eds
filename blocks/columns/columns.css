@@ -140,10 +140,13 @@
   overflow: hidden;
 }
 
+.columns.columns-services .services-heading {
+  text-align:center;
+}
+
 /* Description after heading — spans full width (JS class) */
 .columns.columns-services .services-description {
-  grid-column: 1 / -1;
-  text-align: left;
+  grid-column: 1 / -1;  
   font-size: 15px;
   font-weight: 300;
   line-height: 1.4;
