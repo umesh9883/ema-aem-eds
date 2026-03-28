@@ -108,6 +108,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: center;
   width: 82px;
   height: 82px;
   border-radius: 50%;
