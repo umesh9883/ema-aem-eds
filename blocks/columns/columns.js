@@ -25,18 +25,14 @@ export default function decorate(block) {
     const rightCol = block.querySelector(':scope > div > div:nth-child(2)');
     if (!rightCol) return;
 
-    // Check for background image — first child with a picture before any heading
+    // Check for background image — first child with an image before any heading
     const firstChild = rightCol.firstElementChild;
-    if (firstChild) {
-      const bgPic = firstChild.querySelector('picture');
-      const isBeforeHeading = firstChild.tagName.toLowerCase() !== 'h2';
-      if (bgPic && isBeforeHeading && !firstChild.textContent.trim().replace(/\s/g, '')) {
-        const bgImg = bgPic.querySelector('img');
-        if (bgImg) {
-          rightCol.style.backgroundImage = `url(${bgImg.src})`;
-          rightCol.classList.add('services-bg-image');
-          firstChild.remove();
-        }
+    if (firstChild && firstChild.tagName.toLowerCase() !== 'h2') {
+      const bgImg = firstChild.querySelector('img');
+      if (bgImg) {
+        rightCol.style.backgroundImage = `url(${bgImg.src})`;
+        rightCol.classList.add('services-bg-image');
+        firstChild.remove();
       }
     }
 
