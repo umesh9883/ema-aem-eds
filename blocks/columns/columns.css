@@ -83,6 +83,7 @@
 }
 
 /* Service label text below icons */
+/* stylelint-disable-next-line no-descending-specificity */
 .dark-navy .columns > div > div:nth-child(2) p {
   font-size: 15px;
   font-weight: 300;
