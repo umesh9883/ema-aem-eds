@@ -19,20 +19,22 @@ export default function decorate(block) {
   const rightCol = block.querySelector(':scope > div > div:nth-child(2)');
   if (!rightCol) return;
 
-  // Check for background image — first child with an image before any heading
+  // Check for background image — first child with an image before any heading.
+  // Keep the element in the DOM and position via CSS so it works even when
+  // AEM Dynamic Media resolves the img src asynchronously.
+  let bgElement = null;
   const firstChild = rightCol.firstElementChild;
   if (firstChild && firstChild.tagName.toLowerCase() !== 'h2') {
-    const bgImg = firstChild.querySelector('img');
-    if (bgImg) {
-      rightCol.style.backgroundImage = `url(${bgImg.src})`;
-      rightCol.classList.add('services-bg-image');
-      firstChild.remove();
+    if (firstChild.querySelector('img')) {
+      firstChild.classList.add('services-bg-wrapper');
+      bgElement = firstChild;
     }
   }
 
   let colIndex = 0;
   let lastWasHeading = false;
   [...rightCol.children].forEach((el) => {
+    if (el === bgElement) return;
     const tag = el.tagName.toLowerCase();
     const hasImg = el.querySelector('img') || el.querySelector('picture');
 

@@ -25,6 +25,7 @@
 
 /* Right column: service icon grid */
 .dark-navy .columns > div > div:nth-child(2) {
+  position: relative;
   order: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -91,12 +92,28 @@
   margin: 0 0 16px;
 }
 
-/* Background image on right column (JS-enhanced) */
-.dark-navy .columns .services-bg-image {
+/* Background image wrapper — positioned absolutely behind the grid */
+.dark-navy .columns .services-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  grid-column: 1 / -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.dark-navy .columns .services-bg-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+}
+
+/* Ensure grid content sits above background */
+.dark-navy .columns > div > div:nth-child(2) > *:not(.services-bg-wrapper) {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 /* --- JS-enhanced styles (applied after columns.js adds classes) --- */
