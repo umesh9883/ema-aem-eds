@@ -20,9 +20,10 @@
 }
 
 /* --- columns-services variant (dark-navy "What We Do" section) --- */
+/* Pure CSS fallbacks using .dark-navy section class (no JS required) */
 
 /* Right column: service icon grid */
-.columns.columns-services > div > div:nth-child(2) {
+.dark-navy .columns > div > div:nth-child(2) {
   order: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -32,25 +33,53 @@
 }
 
 /* Left column illustration */
-.columns.columns-services > div > div:first-child {
+.dark-navy .columns > div > div:first-child {
   order: 1;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-.columns.columns-services > div > div:first-child img {
+.dark-navy .columns > div > div:first-child img {
   max-width: 210px;
   height: auto;
   margin: 24px 0;
 }
 
 /* Section sub-headings span full width */
-.columns.columns-services .services-heading {
+.dark-navy .columns > div > div:nth-child(2) h2 {
   grid-column: 1 / -1;
   text-align: left;
   font-size: 32px;
   font-weight: 600;
   margin: 16px 0 8px;
 }
+
+/* Service icons - constrain and invert to white on dark background */
+/* stylelint-disable-next-line no-descending-specificity */
+.dark-navy .columns > div > div:nth-child(2) img {
+  display: block;
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  margin: 0 auto;
+  filter: brightness(0) invert(1);
+}
+
+/* AEM picture wrapper */
+.dark-navy .columns > div > div:nth-child(2) picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Service label text below icons */
+.dark-navy .columns > div > div:nth-child(2) p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+/* --- JS-enhanced styles (applied after columns.js adds classes) --- */
 
 /* Icon paragraphs - circular blue background */
 .columns.columns-services .services-icon {
@@ -64,32 +93,6 @@
   margin: 12px auto 4px;
   padding: 0;
   overflow: hidden;
-}
-
-/* Service icons - white on dark background */
-/* stylelint-disable-next-line no-descending-specificity */
-.columns.columns-services > div > div:nth-child(2) img {
-  display: block;
-  width: 62px;
-  height: 62px;
-  object-fit: contain;
-  margin: 0;
-  filter: brightness(0) invert(1);
-}
-
-/* AEM picture wrapper */
-.columns.columns-services > div > div:nth-child(2) picture {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Text labels below icons */
-.columns.columns-services .services-label {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.4;
-  margin: 0 0 16px;
 }
 
 /* Grid column placement via data-col */
@@ -118,19 +121,20 @@
   }
 
   /* columns-services desktop layout */
-  .columns.columns-services > div {
+  /* stylelint-disable-next-line no-descending-specificity */
+  .dark-navy .columns > div {
     align-items: flex-start;
     gap: 30px;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
-  .columns.columns-services > div > div:first-child {
+  .dark-navy .columns > div > div:first-child {
     flex: 0 0 calc(33.33% - 15px);
     order: unset;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
-  .columns.columns-services > div > div:nth-child(2) {
+  .dark-navy .columns > div > div:nth-child(2) {
     flex: 0 0 calc(66.67% - 15px);
     order: unset;
   }
