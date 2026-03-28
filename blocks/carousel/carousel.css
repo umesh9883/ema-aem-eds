@@ -136,6 +136,7 @@
 }
 
 /* Universal Editor: fixed height to prevent infinite iframe resize loop */
+/* stylelint-disable-next-line no-descending-specificity */
 html.adobe-ue-preview .carousel .carousel-slide {
   min-height: 400px;
 }
