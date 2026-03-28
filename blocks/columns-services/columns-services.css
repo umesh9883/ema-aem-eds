@@ -40,6 +40,16 @@
   margin: 16px 0 8px;
 }
 
+/* Description text after heading spans full width (structural fallback) */
+.columns-services > div > div:nth-child(2) h2 + p {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
 /* Right-column images: invert to white so dark icons show on dark background */
 
 /* This structural fallback ensures icons display even if JS decoration fails */
@@ -72,6 +82,16 @@
   margin: 12px auto 4px;
   padding: 0;
   overflow: hidden;
+}
+
+/* Description after heading — spans full width (JS class) */
+.columns-services .services-description {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 16px;
 }
 
 /* Text labels below icons (JS class) */

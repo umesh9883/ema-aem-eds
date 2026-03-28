@@ -26,6 +26,7 @@ export default function decorate(block) {
     if (!rightCol) return;
 
     let colIndex = 0;
+    let lastWasHeading = false;
     [...rightCol.children].forEach((el) => {
       const tag = el.tagName.toLowerCase();
       const hasImg = el.querySelector('img') || el.querySelector('picture');
@@ -33,13 +34,20 @@ export default function decorate(block) {
       if (tag === 'h2') {
         el.classList.add('services-heading');
         colIndex = 0;
+        lastWasHeading = true;
       } else if (hasImg) {
         el.classList.add('services-icon');
         el.dataset.col = String((colIndex % 3) + 1);
-      } else if (tag === 'p' || tag === 'div') {
+        lastWasHeading = false;
+      } else if (lastWasHeading) {
+        // Description text right after heading — spans full width
+        el.classList.add('services-description');
+        lastWasHeading = false;
+      } else {
         el.classList.add('services-label');
         el.dataset.col = String((colIndex % 3) + 1);
         colIndex += 1;
+        lastWasHeading = false;
       }
     });
   }

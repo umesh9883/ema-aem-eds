@@ -20,6 +20,7 @@
 }
 
 /* --- columns-services variant (dark-navy "What We Do" section) --- */
+
 /* Pure CSS fallbacks using .dark-navy section class (no JS required) */
 
 /* Right column: service icon grid */
@@ -51,6 +52,16 @@
   font-size: 32px;
   font-weight: 600;
   margin: 16px 0 8px;
+}
+
+/* Description text after heading spans full width (pure CSS fallback) */
+.dark-navy .columns > div > div:nth-child(2) h2 + p {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 16px;
 }
 
 /* Service icons - constrain and invert to white on dark background */
@@ -93,6 +104,16 @@
   margin: 12px auto 4px;
   padding: 0;
   overflow: hidden;
+}
+
+/* Description after heading — spans full width (JS class) */
+.columns.columns-services .services-description {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 16px;
 }
 
 /* Grid column placement via data-col */
