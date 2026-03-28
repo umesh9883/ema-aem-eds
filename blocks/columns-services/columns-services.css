@@ -72,7 +72,7 @@
 }
 
 /* Background image wrapper — positioned absolutely behind the grid */
-.columns-services .services-bg-wrapper {
+.columns-services > div > div:nth-child(2) > .services-bg-wrapper {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -82,11 +82,19 @@
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-.columns-services .services-bg-wrapper img {
+.columns-services > div > div:nth-child(2) > .services-bg-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-services > div > div:nth-child(2) > .services-bg-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: none;
+  margin: 0;
 }
 
 /* Ensure grid content sits above background */
