@@ -31,20 +31,15 @@
 /* stylelint-enable no-descending-specificity */
 
 /* Section sub-headings span full width */
-.columns-services > div > div:nth-child(2) h2 {
+.columns-services .services-heading {
   grid-column: 1 / -1;
   text-align: left;
   font-size: 18px;
   margin: 16px 0 8px;
 }
 
-/* Icon paragraphs (positions 2,4,6,9,11,13) - circular blue background */
-.columns-services > div > div:nth-child(2) > :nth-child(2),
-.columns-services > div > div:nth-child(2) > :nth-child(4),
-.columns-services > div > div:nth-child(2) > :nth-child(6),
-.columns-services > div > div:nth-child(2) > :nth-child(9),
-.columns-services > div > div:nth-child(2) > :nth-child(11),
-.columns-services > div > div:nth-child(2) > :nth-child(13) {
+/* Icon paragraphs - circular blue background */
+.columns-services .services-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,8 +52,9 @@
   overflow: hidden;
 }
 
-/* Service icons - white on circular backgrounds (handles both img and picture>img) */
-.columns-services > div > div:nth-child(2) img {
+/* Service icons - white on circular backgrounds */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-services .services-icon img {
   display: block;
   width: 40px;
   height: 40px;
@@ -68,53 +64,29 @@
 }
 
 /* Handle AEM picture wrapper inside icon paragraphs */
-.columns-services > div > div:nth-child(2) picture {
+.columns-services .services-icon picture {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Text paragraphs (positions 3,5,7,10,12,14) - labels below icons */
-.columns-services > div > div:nth-child(2) > :nth-child(3),
-.columns-services > div > div:nth-child(2) > :nth-child(5),
-.columns-services > div > div:nth-child(2) > :nth-child(7),
-.columns-services > div > div:nth-child(2) > :nth-child(10),
-.columns-services > div > div:nth-child(2) > :nth-child(12),
-.columns-services > div > div:nth-child(2) > :nth-child(14) {
+/* Text labels below icons */
+.columns-services .services-label {
   font-size: 13px;
   line-height: 1.4;
   margin: 0 0 16px;
 }
 
-/* Place icon+text pairs in 3 columns (first group after first h2) */
-.columns-services > div > div:nth-child(2) > :nth-child(2),
-.columns-services > div > div:nth-child(2) > :nth-child(3) {
+/* Place icon+text pairs in 3 columns via data-col */
+.columns-services [data-col="1"] {
   grid-column: 1;
 }
 
-.columns-services > div > div:nth-child(2) > :nth-child(4),
-.columns-services > div > div:nth-child(2) > :nth-child(5) {
+.columns-services [data-col="2"] {
   grid-column: 2;
 }
 
-.columns-services > div > div:nth-child(2) > :nth-child(6),
-.columns-services > div > div:nth-child(2) > :nth-child(7) {
-  grid-column: 3;
-}
-
-/* Place icon+text pairs in 3 columns (second group after second h2) */
-.columns-services > div > div:nth-child(2) > :nth-child(9),
-.columns-services > div > div:nth-child(2) > :nth-child(10) {
-  grid-column: 1;
-}
-
-.columns-services > div > div:nth-child(2) > :nth-child(11),
-.columns-services > div > div:nth-child(2) > :nth-child(12) {
-  grid-column: 2;
-}
-
-.columns-services > div > div:nth-child(2) > :nth-child(13),
-.columns-services > div > div:nth-child(2) > :nth-child(14) {
+.columns-services [data-col="3"] {
   grid-column: 3;
 }
 
