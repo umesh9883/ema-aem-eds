@@ -262,6 +262,39 @@ main > .section:first-of-type {
   }
 }
 
+/* Generic section background image (add bg-image style in section-metadata) */
+main .section.bg-image {
+  position: relative;
+}
+
+main .section.bg-image > .section-bg-wrapper,
+main .section.bg-image .section-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.bg-image .section-bg-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.bg-image .section-bg-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .section.bg-image > *:not(.section-bg-wrapper) {
+  position: relative;
+  z-index: 1;
+}
+
 /* section metadata styles */
 main .section.light,
 main .section.highlight {

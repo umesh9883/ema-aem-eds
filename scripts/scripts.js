@@ -96,6 +96,27 @@ function a11yLinks(main) {
 }
 
 /**
+ * Promotes the first standalone image in a section to a positioned background.
+ * The section must have the `bg-image` style class in its section-metadata.
+ * @param {Element} main The main element
+ */
+function decorateSectionBackgrounds(main) {
+  main.querySelectorAll('.section.bg-image').forEach((section) => {
+    const wrapper = section.querySelector(':scope > .default-content-wrapper');
+    if (!wrapper) return;
+    const pic = wrapper.querySelector('picture');
+    if (pic && wrapper.childElementCount === 1) {
+      wrapper.classList.add('section-bg-wrapper');
+    } else if (pic) {
+      const p = pic.closest('p');
+      if (p && p.childElementCount === 1 && p === wrapper.firstElementChild) {
+        p.classList.add('section-bg-wrapper');
+      }
+    }
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -107,6 +128,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateSectionBackgrounds(main);
   // add aria-label to links
   a11yLinks(main);
 }
