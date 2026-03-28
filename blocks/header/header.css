@@ -27,12 +27,7 @@ header nav[aria-expanded='true'] {
     'sections sections' 1fr
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
-  min-height: 100vh;
-}
-
-/* Universal Editor: fixed height to prevent infinite iframe resize loop */
-html.adobe-ue-preview header nav[aria-expanded='true'] {
-  min-height: auto;
+  min-height: min(100vh, 900px);
 }
 
 @media (width >= 900px) {

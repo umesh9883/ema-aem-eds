@@ -45,7 +45,7 @@ main > .section:has(.carousel-hero) > div {
   justify-content: center;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: min(100vh, 900px);
 }
 
 /* Image fills entire slide as background */
