@@ -35,7 +35,8 @@
 .columns-services .services-heading {
   grid-column: 1 / -1;
   text-align: left;
-  font-size: 18px;
+  font-size: 32px;
+  font-weight: 600;
   margin: 16px 0 8px;
 }
 
@@ -45,8 +46,8 @@
 /* stylelint-disable-next-line no-descending-specificity */
 .columns-services > div > div:nth-child(2) img {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 62px;
+  height: 62px;
   object-fit: contain;
   margin: 0;
   filter: brightness(0) invert(1);
@@ -64,8 +65,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
   background: rgb(0 64 255 / 25%);
   margin: 12px auto 4px;
@@ -75,7 +76,8 @@
 
 /* Text labels below icons (JS class) */
 .columns-services .services-label {
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 300;
   line-height: 1.4;
   margin: 0 0 16px;
 }
