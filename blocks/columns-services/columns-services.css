@@ -30,7 +30,8 @@
 }
 /* stylelint-enable no-descending-specificity */
 
-/* Section sub-headings span full width */
+/* Section sub-headings span full width (structural fallback + JS class) */
+.columns-services > div > div:nth-child(2) h2,
 .columns-services .services-heading {
   grid-column: 1 / -1;
   text-align: left;
@@ -38,7 +39,26 @@
   margin: 16px 0 8px;
 }
 
-/* Icon paragraphs - circular blue background */
+/* Right-column images: invert to white so dark icons show on dark background */
+/* This structural fallback ensures icons display even if JS decoration fails */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-services > div > div:nth-child(2) img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 0;
+  filter: brightness(0) invert(1);
+}
+
+/* AEM picture wrapper in right column */
+.columns-services > div > div:nth-child(2) picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon paragraphs - circular blue background (JS class) */
 .columns-services .services-icon {
   display: flex;
   align-items: center;
@@ -52,25 +72,7 @@
   overflow: hidden;
 }
 
-/* Service icons - white on circular backgrounds */
-/* stylelint-disable-next-line no-descending-specificity */
-.columns-services .services-icon img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin: 0;
-  filter: brightness(0) invert(1);
-}
-
-/* Handle AEM picture wrapper inside icon paragraphs */
-.columns-services .services-icon picture {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Text labels below icons */
+/* Text labels below icons (JS class) */
 .columns-services .services-label {
   font-size: 13px;
   line-height: 1.4;
