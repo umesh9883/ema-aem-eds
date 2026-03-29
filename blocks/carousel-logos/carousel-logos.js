@@ -43,6 +43,26 @@ export function showSlide(block, slideIndex = 0, behavior = 'smooth') {
   });
 }
 
+function startAutoPlay(block, interval = 5000) {
+  let timer = setInterval(() => {
+    showSlide(block, parseInt(block.dataset.activeSlide, 10) + 1);
+  }, interval);
+
+  // Pause on hover / focus, resume on leave / blur
+  block.addEventListener('mouseenter', () => { clearInterval(timer); });
+  block.addEventListener('mouseleave', () => {
+    timer = setInterval(() => {
+      showSlide(block, parseInt(block.dataset.activeSlide, 10) + 1);
+    }, interval);
+  });
+  block.addEventListener('focusin', () => { clearInterval(timer); });
+  block.addEventListener('focusout', () => {
+    timer = setInterval(() => {
+      showSlide(block, parseInt(block.dataset.activeSlide, 10) + 1);
+    }, interval);
+  });
+}
+
 function bindEvents(block) {
   const slideIndicators = block.querySelector('.carousel-logos-slide-indicators');
   if (!slideIndicators) return;
@@ -148,5 +168,6 @@ export default async function decorate(block) {
 
   if (!isSingleSlide) {
     bindEvents(block);
+    startAutoPlay(block, 5000);
   }
 }
