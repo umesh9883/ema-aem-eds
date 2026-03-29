@@ -78,8 +78,9 @@ main > .section:has(.carousel-hero) > div {
 }
 
 /* Typography matching original site */
+/* First h1 (accent/highlight) - yellow */
 .carousel-hero .carousel-hero-slide-content h1 {
-  color: #fff;
+  color: var(--accent-color, #ff6);
   font-size: 28px;
   font-weight: 300;
   text-transform: uppercase;
@@ -87,9 +88,9 @@ main > .section:has(.carousel-hero) > div {
   margin: 0 0 4px;
 }
 
-/* Second h1 (accent/highlight) - yellow, bold */
+/* Second h1 - white, bold, larger */
 .carousel-hero .carousel-hero-slide-content h1 + h1 {
-  color: var(--accent-color, #ff6);
+  color: #fff;
   font-size: 44px;
   font-weight: 600;
   margin: 0 0 16px;
