@@ -1,6 +1,12 @@
 /* carousel-logos: compact logo/icon carousel strip */
+.carousel-logos {
+  overflow: hidden;
+  width: 100%;
+}
+
 .carousel-logos .carousel-logos-slides-container {
   position: relative;
+  overflow: hidden;
 }
 
 .carousel-logos .carousel-logos-slides,

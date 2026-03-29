@@ -370,16 +370,17 @@ main .section.dark-blue {
   color: #fff;
   margin: 0;
   padding: 80px 0;
+  overflow: hidden;
 }
 
 main .section.dark-blue h1,
 main .section.dark-blue h2,
 main .section.dark-blue h3 {
-  color: var(--heading-color);
+  color: #fff;
 }
 
 main .section.dark-blue p {
-  color: var(--text-color);
+  color: rgb(255 255 255 / 85%);
 }
 
 /* light-grey: contact section */
