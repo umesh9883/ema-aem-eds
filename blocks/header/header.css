@@ -1,9 +1,24 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: transparent;
   width: 100%;
-  z-index: 2;
+  z-index: 10;
   position: fixed;
+  border-bottom: 1px solid rgb(255 255 255 / 25%);
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Scrolled state: solid white background with dark text */
+header .nav-wrapper.nav-scrolled {
+  background-color: #fff;
+  color: var(--dark-color);
+  border-bottom-color: transparent;
+  box-shadow: 0 10px 10px -10px rgb(0 0 0 / 35%);
+}
+
+header .nav-wrapper.nav-scrolled a:any-link {
+  color: var(--dark-color);
 }
 
 header nav {
@@ -50,8 +65,9 @@ header nav p {
   line-height: 1;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 header nav a:any-link {
-  color: currentcolor;
+  color: #fff;
 }
 
 /* hamburger */
@@ -68,7 +84,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: transparent;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -138,14 +154,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 168px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 168px;
   height: auto;
 }
 
@@ -170,7 +186,7 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 300;
 }
 
 header nav .nav-sections ul > li > ul {

@@ -242,6 +242,16 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
+  // scroll-triggered solid background
+  const SCROLL_THRESHOLD = 50;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      navWrapper.classList.add('nav-scrolled');
+    } else {
+      navWrapper.classList.remove('nav-scrolled');
+    }
+  }, { passive: true });
+
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
