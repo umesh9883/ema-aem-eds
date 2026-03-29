@@ -97,11 +97,11 @@ function a11yLinks(main) {
 
 /**
  * Promotes the first standalone image in a section to a positioned background.
- * The section must have the `bg-image` style class in its section-metadata.
+ * Works with sections that have bg-image, dark-blue, or light-grey styles.
  * @param {Element} main The main element
  */
 function decorateSectionBackgrounds(main) {
-  main.querySelectorAll('.section.bg-image').forEach((section) => {
+  main.querySelectorAll('.section.bg-image, .section.dark-blue, .section.light-grey').forEach((section) => {
     const wrapper = section.querySelector(':scope > .default-content-wrapper');
     if (!wrapper) return;
     const pic = wrapper.querySelector('picture');
