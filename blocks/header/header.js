@@ -198,8 +198,33 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // ensure brand has logo image; add scrolled logo variant
+  const brandAnchor = navBrand.querySelector('a');
+  const brandImg = navBrand.querySelector('img');
+  if (brandImg) {
+    brandImg.classList.add('nav-brand-logo', 'nav-brand-logo-default');
+    const scrolledImg = brandImg.cloneNode(true);
+    scrolledImg.src = scrolledImg.src.replace('ch-logo-invert', 'ch-logo');
+    scrolledImg.classList.remove('nav-brand-logo-default');
+    scrolledImg.classList.add('nav-brand-logo-scrolled');
+    brandAnchor.append(scrolledImg);
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
+    // replace "Home" link text with home icon
+    const homeLink = navSections.querySelector('a[href="/"]');
+    if (homeLink && homeLink.textContent.trim().toLowerCase() === 'home') {
+      const homeIcon = document.createElement('img');
+      homeIcon.src = `${window.hlx.codeBasePath}/icons/home.svg`;
+      homeIcon.alt = 'Home';
+      homeIcon.width = 18;
+      homeIcon.height = 18;
+      homeIcon.classList.add('nav-home-icon');
+      homeLink.textContent = '';
+      homeLink.append(homeIcon);
+    }
+
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {

@@ -165,6 +165,31 @@ header nav .nav-brand img {
   height: auto;
 }
 
+/* logo swap: show inverted (white) by default, dark on scroll */
+header nav .nav-brand .nav-brand-logo-scrolled {
+  display: none;
+}
+
+header .nav-wrapper.nav-scrolled .nav-brand .nav-brand-logo-default {
+  display: none;
+}
+
+header .nav-wrapper.nav-scrolled .nav-brand .nav-brand-logo-scrolled {
+  display: inline-block;
+}
+
+/* home icon in nav */
+header nav .nav-home-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1);
+}
+
+header .nav-wrapper.nav-scrolled .nav-home-icon {
+  filter: none;
+}
+
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
