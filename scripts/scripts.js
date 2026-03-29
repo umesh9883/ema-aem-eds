@@ -104,13 +104,17 @@ function decorateSectionBackgrounds(main) {
   main.querySelectorAll('.section.bg-image, .section.dark-blue, .section.light-grey').forEach((section) => {
     const wrapper = section.querySelector(':scope > .default-content-wrapper');
     if (!wrapper) return;
-    const pic = wrapper.querySelector('picture');
-    if (pic && wrapper.childElementCount === 1) {
+    const media = wrapper.querySelector('picture')
+      || wrapper.querySelector(':scope > p:first-child > img');
+    if (!media) return;
+
+    if (wrapper.childElementCount === 1) {
       wrapper.classList.add('section-bg-wrapper');
-    } else if (pic) {
-      const p = pic.closest('p');
-      if (p && p.childElementCount === 1 && p === wrapper.firstElementChild) {
+    } else {
+      const p = media.closest('p');
+      if (p && p === wrapper.firstElementChild) {
         p.classList.add('section-bg-wrapper');
+        section.insertBefore(p, section.firstChild);
       }
     }
   });

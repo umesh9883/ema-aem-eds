@@ -367,7 +367,7 @@ main .section.gradient-blue > .default-content-wrapper img {
 /* dark-blue: technologies section with dark background image */
 main .section.dark-blue {
   position: relative;
-  background-color: var(--dark-color);
+  background: var(--dark-color) url('/styles/images/background-tech.jpg') no-repeat center / cover;
   color: #fff;
   margin: 0;
   padding: 80px 0;
@@ -380,6 +380,7 @@ main .section.dark-blue > .section-bg-wrapper {
   z-index: 0;
   overflow: hidden;
   padding: 0;
+  margin: 0;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -412,6 +413,33 @@ main .section.dark-blue p {
   color: rgb(255 255 255 / 85%);
 }
 
+/* White content card inside dark-blue section */
+main .section.dark-blue > .default-content-wrapper {
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  padding: 40px 32px 16px;
+  text-align: center;
+}
+
+main .section.dark-blue > .carousel-logos-wrapper {
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  padding: 16px 32px 32px;
+}
+
+/* Reset text colors for white content card */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.dark-blue > .default-content-wrapper h1,
+main .section.dark-blue > .default-content-wrapper h2,
+main .section.dark-blue > .default-content-wrapper h3 {
+  color: var(--heading-color);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.dark-blue > .default-content-wrapper p {
+  color: var(--text-color);
+}
+
 /* light-grey: contact section */
 main .section.light-grey {
   background-color: var(--light-color);
@@ -442,10 +470,12 @@ main .section.light-grey > .columns-contact-wrapper {
   z-index: 1;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 main .section.light-grey h1 {
   color: var(--heading-color);
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 main .section.light-grey p {
   color: var(--text-color-dark);
 }
