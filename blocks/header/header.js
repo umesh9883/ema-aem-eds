@@ -198,13 +198,20 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  // ensure brand has logo image; add scrolled logo variant
+  // ensure brand has logo image; inject if content only has text
   const brandAnchor = navBrand.querySelector('a');
-  const brandImg = navBrand.querySelector('img');
+  let brandImg = navBrand.querySelector('img');
+  if (!brandImg && brandAnchor) {
+    brandImg = document.createElement('img');
+    brandImg.src = `${window.hlx.codeBasePath}/icons/ch-logo-invert.svg`;
+    brandImg.alt = brandAnchor.textContent.trim() || 'CloudHalo';
+    brandAnchor.textContent = '';
+    brandAnchor.append(brandImg);
+  }
   if (brandImg) {
     brandImg.classList.add('nav-brand-logo', 'nav-brand-logo-default');
     const scrolledImg = brandImg.cloneNode(true);
-    scrolledImg.src = scrolledImg.src.replace('ch-logo-invert', 'ch-logo');
+    scrolledImg.src = `${window.hlx.codeBasePath}/icons/ch-logo.svg`;
     scrolledImg.classList.remove('nav-brand-logo-default');
     scrolledImg.classList.add('nav-brand-logo-scrolled');
     brandAnchor.append(scrolledImg);
