@@ -128,16 +128,23 @@ function decorateSectionBackgrounds(main) {
  */
 function assignSectionAnchors(main) {
   const map = [
-    { match: 'carousel-hero-container', id: 'home' },
-    { match: 'columns-services-container', id: 'whatwedo' },
-    { match: 'cards-expertise-container', id: 'expertise' },
-    { match: 'carousel-logos-container', id: 'technology' },
-    { match: 'columns-contact-container', id: 'contact' },
+    { match: ['carousel-hero-container'], id: 'home' },
+    { match: ['columns-services-container', 'dark-navy'], id: 'whatwedo' },
+    { match: ['cards-expertise-container', 'gradient-blue'], id: 'expertise' },
+    { match: ['carousel-logos-container'], id: 'technology' },
+    { match: ['columns-contact-container', 'light-grey'], id: 'contact' },
   ];
 
   map.forEach(({ match, id }) => {
-    const section = main.querySelector(`.section.${match}:not([id])`);
-    if (section) section.id = id;
+    if (document.getElementById(id)) return;
+    match.some((cls) => {
+      const section = main.querySelector(`.section.${cls}:not([id])`);
+      if (section) {
+        section.id = id;
+        return true;
+      }
+      return false;
+    });
   });
 }
 
