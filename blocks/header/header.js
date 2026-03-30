@@ -219,9 +219,11 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    // replace "Home" link text with home icon
-    const homeLink = navSections.querySelector('a[href="/"]');
-    if (homeLink && homeLink.textContent.trim().toLowerCase() === 'home') {
+    // replace "Home" link text with home icon (match by text, not href)
+    const homeLink = [...navSections.querySelectorAll('a')].find(
+      (a) => a.textContent.trim().toLowerCase() === 'home',
+    );
+    if (homeLink) {
       const homeIcon = document.createElement('img');
       homeIcon.src = `${window.hlx.codeBasePath}/icons/home.svg`;
       homeIcon.alt = 'Home';
