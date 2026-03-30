@@ -121,6 +121,27 @@ function decorateSectionBackgrounds(main) {
 }
 
 /**
+ * Assigns simple anchor IDs to page sections so navigation links can target them.
+ * Maps section block-container classes to short, human-friendly IDs matching
+ * the original site's anchor scheme.
+ * @param {Element} main The main element
+ */
+function assignSectionAnchors(main) {
+  const map = [
+    { match: 'carousel-hero-container', id: 'home' },
+    { match: 'columns-services-container', id: 'whatwedo' },
+    { match: 'cards-expertise-container', id: 'expertise' },
+    { match: 'carousel-logos-container', id: 'technology' },
+    { match: 'columns-contact-container', id: 'contact' },
+  ];
+
+  map.forEach(({ match, id }) => {
+    const section = main.querySelector(`.section.${match}:not([id])`);
+    if (section) section.id = id;
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -133,6 +154,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateSectionBackgrounds(main);
+  assignSectionAnchors(main);
   // add aria-label to links
   a11yLinks(main);
 }

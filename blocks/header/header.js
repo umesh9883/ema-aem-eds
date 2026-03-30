@@ -276,6 +276,27 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
+  // smooth-scroll for same-page anchor links
+  nav.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const { href } = link;
+    const url = new URL(href, window.location);
+    const isSamePage = url.pathname === window.location.pathname
+      || url.pathname === '/' || url.pathname === '/index';
+    if (isSamePage && url.hash) {
+      const target = document.getElementById(url.hash.substring(1));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        // close mobile menu if open
+        if (!isDesktop.matches && nav.getAttribute('aria-expanded') === 'true') {
+          toggleMenu(nav, navSections, false);
+        }
+      }
+    }
+  });
+
   // scroll-triggered solid background
   const SCROLL_THRESHOLD = 50;
   window.addEventListener('scroll', () => {
